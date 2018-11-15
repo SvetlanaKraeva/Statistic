@@ -55,7 +55,7 @@ def sq_deviation(x):
     n = len(x)
     x_n = np.zeros(len(x), dtype=float)
     for j in range(0, n):
-        x_n[j] = ((x[j]-sample_mean(x)) ** 2)/n
+        x_n[j] = ((x[j]-sample_mean(x)) ** 2)
     s = (sum_of_bits(x_n, 0, n)/n)**0.5
     return s
 
