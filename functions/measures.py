@@ -80,11 +80,13 @@ def iqr(x):
         k = 0.25 * n
     else:
         k = round(0.25 * n) + 1
+    k = int(k)
     lq = x[k]
     if 0.75*n == round(0.75 * n):
         kk = 0.75 * n
     else:
         kk = round(0.75 * n) + 1
+    kk = int(kk)
     uq = x[kk]
     z = lq-uq
     return z
