@@ -45,7 +45,6 @@ for i in n:
             measures[4][:] = measures_5.out(j)
 
 
-
     Var = np.zeros((5, len(meas)), dtype=float)
     Var[0][:] = measures_1.calc_var()
     Var[1][:] = measures_2.calc_var()
@@ -77,6 +76,7 @@ for i in n:
         for k in range(len(meas)):
             plt.axvline(x=measures[j][k], label='{:<5} {:<5}'.format(meas[k], str('%.5f' % measures[j][k])), c=next(cycol))
         plt.legend()
+        plt.boxplot(sample[j][:], vert=False)
         plt.savefig('output/{}_{:d}.png'.format(names[j], i), bbox_inches='tight')
         plt.close()
 

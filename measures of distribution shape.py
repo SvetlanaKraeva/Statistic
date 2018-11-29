@@ -13,19 +13,17 @@ def kernel(x):
     return k
 
 
-step = 6/(100+1)
-x = np.arange(-3,3,step)
+n = 100
+step = 6/(n+1)
+x = np.arange(-3, 3, step)
 mu = mes.sample_mean(x)
 s = mes.sq_deviation(x)
-print(x)
-
-n = 100
 h = s/(n**0.4)
 
-f_k = mes.sum_of_bits(kernel(x))
+"f_k = mes.sum_of_bits(kernel(x))/n/h"
 f = np.exp(-(x**2)/2)/np.sqrt(2*np.pi)
 f_t = np.exp((-(x-mu)**2)/(2*(s**2)))/(s*np.sqrt(2*np.pi))
 
-plt.plot(x,f)
-plt.plot(x,f_t)
+plt.plot(x, f)
+plt.plot(x, f_t)
 plt.show()
